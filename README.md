@@ -4,10 +4,10 @@
 ## 安装
 yarn config set registry https://registry.npm.taobao.org
 
-后台 egg + egg-mongoose
+后台 egg + egg-mysql
 ```
 /** egg */
-yarn add egg egg-view-nunjucks axios 
+yarn add egg egg-view-nunjucks egg-mysql axios lodash
 
 /** graphql */
 yarn add egg-jwt graphql graphql-server-koa graphql-tools

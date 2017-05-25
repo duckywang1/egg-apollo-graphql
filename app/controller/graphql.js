@@ -1,24 +1,28 @@
 'use strict'
 
 const { graphqlKoa, graphiqlKoa } = require('graphql-server-koa')
+const executableSchema = require('../graphqlcomponents/schema/index.js')
+
+const models = require('../graphqlcomponents/models/index.js')
+const connectors = require('../graphqlcomponents/connectors/index.js')
 
 module.exports = app => {
   class GraphqlController extends app.Controller {
     * graphql () {
-      return yield graphqlKoa({
-        schema: {},
+      return graphqlKoa({
+        schema: executableSchema,
         context: {
-          ctx: this.ctx
+          ctx: this.ctx,
+          ApplicationModel: new models.ApplicationModel(connectors.applicationConnectors)
         },
         allowUndefinedInResolve: false,
         printErrors: true
       })(this.ctx)
+
     }
 
     * graphiql () {
-      console.log('controller')
-      console.log(this.ctx.request)
-      yield graphiqlKoa({ endpointURL: '/graphql' })(this.ctx)
+      graphiqlKoa({ endpointURL: '/graphql' })(this.ctx)
     }
   }
   return GraphqlController
