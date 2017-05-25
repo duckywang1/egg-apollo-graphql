@@ -13,12 +13,12 @@ module.exports = app => {
         schema: executableSchema,
         context: {
           ctx: this.ctx,
-          ApplicationModel: new models.ApplicationModel(connectors.applicationConnectors)
+          ApplicationModel: new models.ApplicationModel(this.ctx, connectors.applicationConnectors),
+          AppkeyModel: new models.AppkeyModel(this.ctx, null)
         },
         allowUndefinedInResolve: false,
         printErrors: true
       })(this.ctx)
-
     }
 
     * graphiql () {

@@ -8,22 +8,22 @@ const applicationResolvers = {
   },
   Query: {
     getApplicationList (root, args, context) {
-      const ctx = context.ctx
       const ApplicationModel = context.ApplicationModel
-      return ApplicationModel.getApplicationList(ctx, args)
+      return ApplicationModel.getApplicationList(args)
     }
   },
   Mutation: {
-    createApplication (root, args, context) {
-      const ctx = context.ctx
+    async createApplication (root, args, context) {
       const ApplicationModel = context.ApplicationModel
-      return ApplicationModel.createApplication(ctx, args)
+      return ApplicationModel.createApplication(args)
     },
-    updateApplication (root, args, context) {
-
+    async updateApplication (root, args, context) {
+      const ApplicationModel = context.ApplicationModel
+      return ApplicationModel.updateApplication(args)
     },
-    deleteApplication (root, args, context) {
-      
+    async deleteApplication (root, args, context) {
+      const ApplicationModel = context.ApplicationModel
+      return ApplicationModel.deleteApplication(args)
     }
   }
 }
