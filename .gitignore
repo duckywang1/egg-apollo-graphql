@@ -4,3 +4,6 @@ run/
 node_modules
 
 app/public/dist
+
+#logs
+yarn-error.log

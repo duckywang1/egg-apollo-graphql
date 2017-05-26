@@ -7,4 +7,5 @@ module.exports = app => {
   app.post('/graphiql', app.controller.graphql.graphiql)
 
   app.get('/', app.controller.home.index)
+  app.get('*', app.controller.home.index)
 }

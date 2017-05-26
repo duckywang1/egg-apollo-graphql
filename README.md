@@ -21,7 +21,7 @@ yarn add egg-bin egg-mock --dev
 yarn add webpack --dev
 
 /** react */
-yarn add react react-dom react-router react-router-dom history mobx mobx-react awesome-typescript-loader @types/react @types/react-dom style-loader css-loader typescript classnames --dev
+yarn add react react-dom react-router react-router-dom history mobx mobx-react awesome-typescript-loader @types/react @types/react-dom style-loader css-loader typescript classnames react-apollo --dev
 
 /** eslint */
 yarn add eslint eslint-config-standard eslint-plugin-import eslint-plugin-promise eslint-plugin-standard eslint-plugin-node --dev
