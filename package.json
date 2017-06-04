@@ -1,0 +1,8 @@
+{
+  "name": "egg-apollo-graphql-boilerplate",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/duckywang1/egg-apollo-graphql-boilerplate.git",
+  "author": "王达夫 <duckywang1@gmail.com>",
+  "license": "MIT"
+}
